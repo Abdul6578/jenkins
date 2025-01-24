@@ -2,8 +2,9 @@ pipeline {
     agent any
     
     triggers {
-        parameterizedCron("* * * * * %SERVICE_TIER=12345;BUDGET=WorkSubBudget;BUDGET_DOLLARS=9500")
-
+        parameterizedCron('''
+        * * * * * %SERVICE_TIER=12345;BUDGET=WorkSubBudget;BUDGET_DOLLARS=9500
+        ''')
     }
     parameters {
         string(name: 'SERVICE_TIER', defaultValue: '', description: 'Service Tier')
