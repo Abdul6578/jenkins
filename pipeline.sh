@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     triggers {
-        parameterizedCron("${env.ABDUl}")
+        parameterizedCron("* * * * * %SERVICE_TIER=12345;BUDGET=WorkSubBudget;BUDGET_DOLLARS=9500")
 
     }
     parameters {
